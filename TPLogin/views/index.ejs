@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../public/css/bootstrap@5.3.2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
+    
+</head>
+    <body class="text-center">
+        
+        <nav>
+            <div class="contenedor2">
+            <div class="contenedor">
+                
+                <% if (login) { %>
+
+                    
+                    <h1>¡Bienvenido a Bazar a tu alcance!</h1>
+                    <h1 class="h1-2">Pagina de inicio</h1>
+                    <h1>Usuario conectado: <strong>
+                            <%= name %>
+                        </strong></h1>
+                    <a href="logout" class="a-logout">Cerrar sesion</a>
+                    <%} else { %>
+                        <h1 class="h1-2">¡Lo sentimos!</h1>
+
+                        <h1><strong>
+                                <%= name %>
+                            </strong></h1>
+                        <a href="login" class="a-login">Ir a Inicio de sesion</a>
+                        <% } %>
+            </div>
+        </nav>
+    </div>
+    </body>
+
+</html>

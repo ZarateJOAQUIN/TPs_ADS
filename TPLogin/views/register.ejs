@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+
+</head>
+
+<body>
+    <div class="container2">
+    <div class="register-form">
+        <h1>¡Bienvenido al registro de Bazar a tu Alcance!</h1>
+        <form action="/register" method="POST">
+            <label for="user"></label>
+            <input type="text" name="user" placeholder="Nombre de usuario" required tabindex="1" autofocus>
+
+            <label for="mail"></label>
+            <input type="mail" name="mail" placeholder="Correo" tabindex="2">
+
+            <label for="pass"></label>
+            <input type="password" name="pass" placeholder="Contraseña" tabindex="3">
+            <div style="display: inline;">
+                <input type="submit" class="btn-register" value="Registrarme">
+                <p class="prf2">¿Ya tenes una cuenta?</p>
+                <p class="prf3"><a href="./login" class="btn-cancel">Iniciar sesión</a></p>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <% if (typeof alert !="undefined" ) { %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton: <%= showConfirmButton %>,
+                timer: <%= timer %>
+     }).then(() => {
+                    window.location = '/<%= ruta %>'
+                })
+        </script>
+        <% } %>
+
+</body>
+
+</html>

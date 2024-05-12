@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="resources/css/style.css">
+</head>
+
+<body>
+  <div class="container">
+  <div class="login-form">
+    <h2>¡Bienvenido!</h2>
+    <form action="/auth" method="POST">
+      <input type="text" name="user" id="user" placeholder="usuario" autofocus required>
+      <input type="password" name="pass" id="pass" placeholder="contraseña" required>
+      <input type="submit" class="btn-login" value="Iniciar Sesión">
+      </from>
+      <a href="./register" class="btn-register">Registrate</a>
+      <h3>¿Todavia no tenes una cuenta?</h3>
+      <p class="prf">¡Bazar a tu Alcance!</p>
+    </div>
+
+      <!-- las sguientes lineas son para utilizar el formato de alertas de sweetalert y tambien atajos de la extencion ejs -->
+
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+      <% if (typeof alert !="undefined" ) { %>
+        <script>
+          Swal.fire({
+            title: '<%= alertTitle %>',
+            text: '<%= alertMessage %>',
+            icon: '<%= alertIcon %>',
+            showConfirmButton: <%= showConfirmButton %>,
+            timer: <%= timer %>
+    }).then(() => {
+              window.location = '/<%= ruta %>'
+            })
+        </script>
+        <% } %>
+
+  </div>
+  <footer>
+ 
+  </footer>
+
+
+</body>
+
+</html>
